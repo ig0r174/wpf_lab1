@@ -28,13 +28,23 @@ namespace WpfApp1
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             TextBox txtNumber = new TextBox();
-            txtNumber.TextChanged += new EventHandler(TextChanged);
+            txtNumber.TextChanged += TextChanged;
             AllNumbers.Children.Add(txtNumber);
         }
 
         private void TextChanged(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            double sum = 0;
+            foreach (var item in AllNumbers.Children)
+            {
+                if( item is TextBox )
+                {
+                    var tb = (TextBox)item;
+                    if (tb.Text.Length > 0)
+                        sum += double.Parse(tb.Text);
+                }
+            }
+            ResultLabel.Content = "Результат: " + sum;
         }
 
     }
