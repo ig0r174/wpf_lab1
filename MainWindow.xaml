@@ -5,11 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="337.971" Width="281.276">
+        Title="MainWindow" Height="414.014" Width="567.143" WindowStyle="ThreeDBorderWindow">
     <Grid>
-        <Label x:Name="ResultLabel" Content="Результат:" HorizontalAlignment="Left" Margin="32,26,0,0" VerticalAlignment="Top"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="234,26,0,0" VerticalAlignment="Top" Width="29" Height="26" Click="Button_Click"/>
-        <StackPanel x:Name="AllNumbers" HorizontalAlignment="Left" Height="205" Margin="32,74,0,0" VerticalAlignment="Top" Width="210"/>
 
+        <Grid HorizontalAlignment="Left" Height="52" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Grid ShowGridLines="True">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="86*"></RowDefinition>
+                <RowDefinition Height="297*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.25*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="0.25*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel x:Name="AllNumbers" Margin="10" Width="353" HorizontalAlignment="Center" Grid.Row="1" Panel.ZIndex="2" Grid.Column="1"/>
+            <Label x:Name="ResultLabel" Content="Результат:" HorizontalAlignment="Center" Margin="10,30" VerticalAlignment="Center" Height="26" Width="353" Grid.Column="1"/>
+            <Button Content="+" HorizontalAlignment="Center" Margin="0" Width="34" Height="26" Click="Button_Click" VerticalAlignment="Center" Grid.Column="2"/>
+            <Button Content="Delete Last" Grid.Column="2" HorizontalAlignment="Center" Margin="0,62,0,0" VerticalAlignment="Bottom" Width="92" Click="Button_Click_1"/>
+            <StackPanel x:Name="AllButtons" Grid.Column="2" HorizontalAlignment="Left" Height="277" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="73"/>
+        </Grid>
     </Grid>
 </Window>
