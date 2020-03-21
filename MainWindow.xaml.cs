@@ -28,22 +28,34 @@ namespace WpfApp1
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             int number = AllNumbers.Children.Count;
-            TextBox txtNumber = new TextBox();
-            txtNumber.Height = 22;
-            txtNumber.Margin = new Thickness(0, 0, 0, 10);
+            
+            TextBox txtNumber = new TextBox()
+            {
+                Height = 22,
+                Margin = new Thickness(0, 0, 0, 10),
+                Name = "tb" + AllNumbers.Children.Count
+             };
+
             txtNumber.TextChanged += DataUpdated;
-            txtNumber.Name = "tb" + AllNumbers.Children.Count;
             AllNumbers.Children.Add(txtNumber);
 
-            Button btn = new Button();
-            btn.Content = "Delete";
+            Button btn = new Button()
+            {
+                Content = "Delete",
+                Height = 22,
+                Margin = new Thickness(0, 0, 0, 10),
+                Name = "btn" + AllButtons.Children.Count
+            };
+
             btn.Click += Btn_Click;
-            btn.Height = 22;
-            btn.Margin = new Thickness(0, 0, 0, 10);
-            btn.Name = "btn" + AllButtons.Children.Count;
             AllButtons.Children.Add(btn);
 
-            ComboBox combobox = new ComboBox();
+            ComboBox combobox = new ComboBox()
+            {
+                Height = 22,
+                Margin = new Thickness(0, 0, 0, 10),
+                Name = "cb" + AllComboBoxes.Children.Count
+            };
 
             foreach (var action in new char[4] {'+', '-', '/', '*'})
             {
@@ -51,11 +63,7 @@ namespace WpfApp1
             }
 
             combobox.SelectedIndex = 0;
-            combobox.Height = 22;
-            combobox.Margin = new Thickness(0, 0, 0, 10);
-            combobox.Name = "cb" + AllComboBoxes.Children.Count;
             combobox.SelectionChanged += DataUpdated;
-
             AllComboBoxes.Children.Add(combobox);
         }
 
@@ -78,9 +86,9 @@ namespace WpfApp1
                 if (item is TextBox)
                 {
                     var tb = (TextBox)item;
-                    double value = Convert.ToDouble(tb.Text);
-
                     if (!decimal.TryParse(tb.Text, out outDecimal)) continue;
+
+                    double value = Convert.ToDouble(tb.Text);
 
                     int id = Convert.ToInt32(tb.Name.Substring(2));
                     ComboBox cb = AllComboBoxes.Children[id] as ComboBox;
