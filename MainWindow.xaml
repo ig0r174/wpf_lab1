@@ -24,6 +24,7 @@
             <Button Content="+" HorizontalAlignment="Center" Margin="0" Width="34" Height="26" Click="Button_Click" VerticalAlignment="Center" Grid.Column="2"/>
             <Button Content="Delete Last" Grid.Column="2" HorizontalAlignment="Center" Margin="0,62,0,0" VerticalAlignment="Bottom" Width="92" Click="Button_Click_1"/>
             <StackPanel x:Name="AllButtons" Grid.Column="2" HorizontalAlignment="Left" Height="277" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="73"/>
+            <StackPanel x:Name="AllComboBoxes" HorizontalAlignment="Left" Height="277" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="73"/>
         </Grid>
     </Grid>
 </Window>
