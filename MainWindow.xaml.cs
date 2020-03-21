@@ -77,7 +77,6 @@ namespace WpfApp1
             {
                 if (item is TextBox)
                 {
-                    double number;
                     var tb = (TextBox)item;
                     double value = Convert.ToDouble(tb.Text);
 
