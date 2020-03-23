@@ -36,7 +36,7 @@ namespace WpfApp1
                 Name = "tb" + AllNumbers.Children.Count
              };
 
-            txtNumber.TextChanged += DataUpdated;
+            txtNumber.TextChanged += SetHandler;
             AllNumbers.Children.Add(txtNumber);
 
             Button btn = new Button()
@@ -63,16 +63,16 @@ namespace WpfApp1
             }
 
             combobox.SelectedIndex = 0;
-            combobox.SelectionChanged += DataUpdated;
+            combobox.SelectionChanged += SetHandler;
             AllComboBoxes.Children.Add(combobox);
         }
 
-        private void DataUpdated(object sender, SelectionChangedEventArgs e)
+        private void SetHandler(object sender, SelectionChangedEventArgs e)
         {
             UpdateResult();
         }
 
-        private void DataUpdated(object sender, TextChangedEventArgs e)
+        private void SetHandler(object sender, TextChangedEventArgs e)
         {
             UpdateResult();
         }
