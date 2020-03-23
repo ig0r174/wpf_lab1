@@ -80,13 +80,13 @@ namespace WpfApp1
         private void UpdateResult()
         {
             double result = 0;
-            decimal outDecimal;
             foreach (var item in AllNumbers.Children)
             {
                 if (item is TextBox)
                 {
                     var tb = (TextBox)item;
-                    if (!decimal.TryParse(tb.Text, out outDecimal)) continue;
+                    if (!decimal.TryParse(tb.Text, out decimal outDecimal)) continue;
+                    
 
                     double value = Convert.ToDouble(tb.Text);
 
