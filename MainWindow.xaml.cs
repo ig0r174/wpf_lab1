@@ -84,10 +84,9 @@ namespace WpfApp1
             {
                 if (item is TextBox)
                 {
-                    var tb = (TextBox)item;
+                    var tb = item as TextBox;
                     if (!decimal.TryParse(tb.Text, out decimal outDecimal)) continue;
                     
-
                     double value = Convert.ToDouble(tb.Text);
 
                     int id = Convert.ToInt32(tb.Name.Substring(2));
